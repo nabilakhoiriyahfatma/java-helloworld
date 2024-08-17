@@ -28,7 +28,7 @@ pipeline {
                 sh '''
                 #echo "login to registry dockerhub"
                 docker login -u nabilakhry -p dckr_pat_UREtpHHt9cC4SNpa_rm9LCWiTYM
-		#docker push nabilakhry/java-helloworld
+		docker push nabilakhry/java-helloworld
                 '''
             }
         }

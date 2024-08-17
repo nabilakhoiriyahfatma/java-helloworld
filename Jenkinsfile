@@ -23,12 +23,12 @@ pipeline {
         }
         stage('Push Docker Image'){
             steps{
-        	docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+        	//docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
             	//app.push("${env.BUILD_NUMBER}")
                 sh '''
-                #docker push registry.lab-home.example.com/jaguar-java:latest
                 #echo "login to registry dockerhub"
-                #docker push nabilakhry/java-helloworld
+                docker login -u nabilakhry -p dckr_pat_UREtpHHt9cC4SNpa_rm9LCWiTYM
+		#docker push nabilakhry/java-helloworld
                 '''
             }
         }

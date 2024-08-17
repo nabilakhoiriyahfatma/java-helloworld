@@ -25,6 +25,9 @@ pipeline {
             steps{
                 sh '''
                 #docker push registry.lab-home.example.com/jaguar-java:latest
+                echo "login to registry dockerhub"
+		docker login -u nabilakhry -p dckr_pat_UREtpHHt9cC4SNpa_rm9LCWiTY 
+                docker push nabilakhry/java-helloworld
                 '''
             }
         }

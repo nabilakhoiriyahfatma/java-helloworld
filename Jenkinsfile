@@ -7,6 +7,13 @@ pipeline {
 		checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/nabilakhoiriyahfatma/java-helloworld.git']])
             }
         }
+        stage('Scan Sonarqube'){
+            steps{
+                sh '''
+                mvn clean verify sonar:sonar   -Dsonar.projectKey=java-helloworld   -Dsonar.host.url=http://192.168.122.106:9000   -Dsonar.login=sqp_90c72b6421e318b7140b5456a78f514fc6d09077
+                '''
+            }
+        }	
         stage('Build Maven'){
             steps{
                 sh '''

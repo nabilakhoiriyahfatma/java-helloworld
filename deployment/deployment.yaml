@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-apps
+  namespace: demo-java-apps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-apps
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: java-apps
+    spec:
+      containers:
+      - image: nabilakhry/java-helloworld:latest
+        imagePullPolicy: Always
+        name: container
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30

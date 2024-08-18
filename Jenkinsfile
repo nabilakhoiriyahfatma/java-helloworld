@@ -46,8 +46,8 @@ pipeline {
             }
 	   steps{
 		sh '''
-		#oc delete -f dc/dc-dev.yaml -n development
-		#oc apply -f dc/dc-dev.yaml -n development
+		oc delete -f deployment/deployment.yaml 
+		oc apply -f deployment/deployment.yaml 
 		'''
 	   }
 	  post{

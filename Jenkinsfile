@@ -46,7 +46,7 @@ pipeline {
             }
 	   steps{
 		sh '''
-                ooc login --token=sha256~eFSIh-2nZp-gTixbMariVm5eX3V-lKn4pUzMtRkUyJo --server=https://api.dev.awankinton.my.id:6443 --insecure-skip-tls-verify
+                oc login --token=sha256~eFSIh-2nZp-gTixbMariVm5eX3V-lKn4pUzMtRkUyJo --server=https://api.dev.awankinton.my.id:6443 --insecure-skip-tls-verify
 		oc delete -f deployment/deployment.yaml 
 		oc apply -f deployment/deployment.yaml 
 		'''

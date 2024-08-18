@@ -55,7 +55,7 @@ pipeline {
                     echo 'Berhasil Deploy ke Development'
                 }
                 failure {
-                    echo 'Gagal Deploy ke Development
+                    echo 'Gagal Deploy ke Development'
                 }
 	  }
 	}

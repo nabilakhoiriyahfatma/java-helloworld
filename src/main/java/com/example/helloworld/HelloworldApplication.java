@@ -19,7 +19,7 @@ public class HelloworldApplication {
 
         @GetMapping("/hello")
         public String sayHello() {
-            return "Hello World v1!";
+            return "Hello World v2!";
         }
     }
 }
